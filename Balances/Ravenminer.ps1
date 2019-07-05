@@ -16,7 +16,7 @@ $Ravenminer_Host = "ravenminer.com"
 
 $Success = $true
 try {
-    if (-not ($Request = Invoke-RestMethodAsync "https://$($Ravenminer_Host)/api/walletEx?address=$($PoolConfig.RVN)" -cycletime ($Config.BalanceUpdateMinutes*60))){$Success = $false}
+    if (-not ($Request = Invoke-RestMethodAsync "https://$($Ravenminer_Host)/api/wallet?address=$($PoolConfig.RVN)" -cycletime ($Config.BalanceUpdateMinutes*60))){$Success = $false}
 }
 catch {
     if ($Error.Count){$Error.RemoveAt(0)}
